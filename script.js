@@ -23,24 +23,6 @@ const projects = [
     }
 ];
 
-// Publications data
-const publications = [
-    {
-        title: "Novel Approach to Transfer Learning in Deep Neural Networks",
-        authors: "Your Name, Co-author Name",
-        journal: "Journal of Machine Learning Research",
-        year: 2023,
-        link: "https://journal.example.com/paper1"
-    },
-    {
-        title: "Efficient Natural Language Processing in Healthcare",
-        authors: "Your Name, Other Authors",
-        journal: "Computational Linguistics Journal",
-        year: 2022,
-        link: "https://journal.example.com/paper2"
-    }
-];
-
 // DOM Elements
 document.addEventListener('DOMContentLoaded', () => {
     // Navigation functionality
@@ -79,20 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Load publications dynamically
-    const publicationsContainer = document.getElementById('publicationsContainer');
-    if (publicationsContainer) {
-        publications.forEach(pub => {
-            const pubElement = createPublicationItem(pub);
-            publicationsContainer.appendChild(pubElement);
-        });
-    }
-
-    // Contact form handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactSubmit);
-    }
+    // Initialize typing animation
+    initTypeWriter();
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -142,47 +112,64 @@ function createProjectCard(project) {
     return card;
 }
 
-// Create publication item element
-function createPublicationItem(publication) {
-    const item = document.createElement('div');
-    item.className = 'publication-item';
+// Fixed typing animation
+function initTypeWriter() {
+    const targetElement = document.getElementById('typing-text');
+    const text = "Machine Learning Solutions for Real-World Problems";
+    const speed = 50;
+    let i = 0;
     
-    item.innerHTML = `
-        <h3>${publication.title}</h3>
-        <p>${publication.authors}</p>
-        <p>${publication.journal}, ${publication.year}</p>
-        <a href="${publication.link}" target="_blank" rel="noopener noreferrer">Read Paper</a>
-    `;
+    // Clear any existing text
+    targetElement.textContent = '';
     
-    return item;
+    function type() {
+        if (i < text.length) {
+            targetElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
 }
 
-// Handle contact form submission
-async function handleContactSubmit(e) {
+// Handle contact form submission with EmailJS
+function sendEmail(e) {
     e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
     
-    try {
-        // Show loading state
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
+    // Get form elements
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+    
+    // Show loading state
+    const submitButton = e.target.querySelector('button');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
 
-        // Simulate form submission (replace with actual API endpoint)
-        await new Promise(resolve => setTimeout(resolve, 1000));
+    // Prepare template parameters
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message
+    };
 
-        // Show success message
-        showNotification('Message sent successfully!', 'success');
-        form.reset();
-    } catch (error) {
-        showNotification('Failed to send message. Please try again.', 'error');
-    } finally {
-        const submitButton = form.querySelector('button[type="submit"]');
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-    }
+    // Send email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            showNotification('Message sent successfully!', 'success');
+            e.target.reset();
+        }, function(error) {
+            showNotification('Failed to send message. Please try again.', 'error');
+            console.error('Email error:', error);
+        })
+        .finally(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+
+    return false;
 }
 
 // Show notification
@@ -208,75 +195,3 @@ window.addEventListener('scroll', () => {
         navbar?.classList.remove('scrolled');
     }
 });
-
-// Typing animation for hero section
-function initTypeWriter() {
-    const text = "Machine Learning Solutions for Real-World Problems";
-    const speed = 50;
-    let i = 0;
-    
-    function type() {
-        if (i < text.length) {
-            document.querySelector('.hero-content p').textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Initialize typing animation when page loads
-window.addEventListener('load', initTypeWriter);
-
-// Add CSS styles for animations and notifications
-const style = document.createElement('style');
-style.textContent = `
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .notification {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 1rem 2rem;
-        border-radius: 4px;
-        color: white;
-        z-index: 1000;
-        animation: slideIn 0.3s ease-out;
-    }
-    
-    .notification.success {
-        background-color: #2ecc71;
-    }
-    
-    .notification.error {
-        background-color: #e74c3c;
-    }
-    
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    .navbar.scrolled {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(5px);
-    }
-`;
-
-document.head.appendChild(style);
