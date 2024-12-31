@@ -14,7 +14,7 @@ const projects = [
     },
     {
         title: "HR Workforce Analysis with SQL Power-BI",
-        description: "Created a scalable platform for time series forecasting using LSTM and Prophet. Deployed on AWS using Docker and Kubernetes.",
+        description: "This project analyzes and visualizes the distribution of employees within an organization, providing insights into departmental allocations, geographical dispersion, and diversity metrics. The findings inform strategic decisions, optimize resource allocation, and enhance workforce planning.",
         tags: ["SQL, MySQL, Data Cleaning, Diversity Analysis, Turnover Analysis, Dashboard Creation, Workforce Analytics, Geographical Distribution Analysis"],
         github: "https://github.com/arijit-chandra/HR-Workforce-Analysis-with-SQL-Power-BI"
     }
