@@ -1,22 +1,45 @@
 // Project data
 const projects = [
     {
-        title: "MLOps Machine Learning Based Visa Certification Prediction",
-        description: "This project demonstrates the end-to-end implementation of a machine learning solution designed for production readiness. The pipeline includes data preprocessing, feature engineering, model training, and deployment using modern MLOps tools and best practices.",
-        tags: ["MLOps, Model Training, Model Deployment, Continuous Deployment (CI/CD), Docker, Azure, MongoDB, Feature Engineering, Statistical Modeling"],
-        github: "https://github.com/arijit-chandra/MLOps-Machine-Learning-Based-Visa-Certification-Prediction"
+        title: "Hospital Emergency Room Analytics Dashboard (Excel)",
+        description: "Built an end-to-end Excel dashboard to analyze ER operations, including patient flow, wait times, admissions, and referrals. Enabled data-driven decisions by tracking KPIs like service time compliance and patient distribution.",
+        tags: [
+            "Excel",
+            "Power Query",
+            "Power Pivot",
+            "DAX",
+            "Dashboarding",
+            "Healthcare Analytics",
+            "Data Modeling"
+        ],
+        github: "https://github.com/arijit-chandra/Hospital-Emergency-Room-Data-Analysis"
     },
     {
-        title: "Optimizing Facebook Ads using A/B-Testing",
-        description: "This project analyzes Facebook advertising data to compare the effectiveness of 'average bidding' versus 'maximum bidding' strategies through A/B testing. The analysis focuses on key metrics including impressions, clicks, purchases, and earnings to determine the most efficient bidding approach.",
-        tags: ["A/B Testing, Hypothesis Testing, Impressions Analysis, Earnings Analysis, Exploratory Data Analysis (EDA), Click-Through Rate (CTR), Conversion Rate"],
+        title: "Facebook Ads Optimization using A/B Testing",
+        description: "Analyzed Facebook ad campaigns to compare average vs maximum bidding strategies using statistical A/B testing. Identified the most efficient strategy based on CTR, conversions, and revenue.",
+        tags: [
+            "A/B Testing",
+            "Hypothesis Testing",
+            "EDA",
+            "CTR Analysis",
+            "Conversion Rate",
+            "Statistical Analysis"
+        ],
         github: "https://github.com/arijit-chandra/Optimizing-Facebook-Bidding-Ads-using-A-B-Testing"
     },
     {
-        title: "HR Workforce Analysis with SQL Power-BI",
-        description: "This project analyzes and visualizes the distribution of employees within an organization, providing insights into departmental allocations, geographical dispersion, and diversity metrics. The findings inform strategic decisions, optimize resource allocation, and enhance workforce planning.",
-        tags: ["SQL, MySQL, Data Cleaning, Diversity Analysis, Turnover Analysis, Dashboard Creation, Workforce Analytics, Geographical Distribution Analysis"],
-        github: "https://github.com/arijit-chandra/HR-Workforce-Analysis-with-SQL-Power-BI"
+        title: "QuickBite Crisis Recovery Analysis (SQL + Power BI)",
+        description: "Analyzed a food delivery startup crisis to identify causes of customer churn, revenue drop, and operational inefficiencies. Delivered actionable strategies to improve delivery performance, retain customers, and rebuild trust using SQL and Power BI dashboards.",
+        tags: [
+            "SQL",
+            "Power BI",
+            "DAX",
+            "Business Analysis",
+            "Customer Segmentation",
+            "Churn Analysis",
+            "Data Storytelling"
+        ],
+        github: "https://github.com/arijit-chandra/QuickBite-Crisis-Recovery-Analysis"
     }
 ];
 
