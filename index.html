@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arijit Chandra | Data Scientist</title>
+    <title>Arijit Chandra | Data Analyst</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
                 <h1>Arijit Chandra</h1>
-                <p>Data Scientist | Data Analyst</p>
+                <p>Data Analyst</p>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -22,22 +23,19 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>Turning Data into Insights</h1>
-            <p id="typing-text"></p>
+            <h1>Turning Data into Actionable Insights</h1>
+            <p>I transform complex data into clear business decisions.</p>
         </div>
     </header>
 
     <main>
+
+        <!-- ABOUT -->
         <section id="about" class="section">
             <h2>About Me</h2>
             <div class="about-content">
@@ -45,11 +43,27 @@
                     <img src="assets/images/profile.png" alt="Arijit Chandra" class="circular-image">
                 </div>
                 <div class="about-text">
-                    <p>Innovative Data Scientist with a strong foundation in software development, bringing a unique blend of technical expertise and analytical skills. Specialized in machine learning, statistical analysis, and data-driven decision making. Completed intensive training in modern data science technologies and methodologies, with hands-on experience through impactful projects and internships.</p>
-                    <p>Proficient in developing end-to-end machine learning solutions, from data preprocessing to model deployment, with a focus on creating scalable and efficient solutions. Committed to continuous learning and staying current with the latest developments in AI and ML technologies.</p>
+                    <p>Hi, I’m Arijit Chandra 👋</p>
+
+                    <p>I’m a Data Analyst dedicated to transforming complex datasets into actionable strategies. I believe that data is only as valuable as the stories it tells, and I thrive on bridging the gap between raw numbers and clear business decisions.</p>
+
+                    <p>I specialize in the end-to-end data process: cleaning messy datasets, performing deep-dive analysis, and building intuitive visualizations that help stakeholders see the "big picture."</p>
+
+                    <p>My approach is rooted in accuracy, efficiency, and a relentless curiosity for solving business problems.</p>
+
+                    <h3>What I Bring to the Table:</h3>
+                    <ul>
+                        <li><strong>End-to-End Data Pipeline:</strong> Cleaning, transforming, and modeling raw data</li>
+                        <li><strong>Impactful Storytelling:</strong> Turning insights into business decisions</li>
+                        <li><strong>Process Automation:</strong> Reducing manual reporting efforts</li>
+                        <li><strong>Collaborative Mindset:</strong> Aligning data with business goals</li>
+                    </ul>
+
+                    <p><strong>Currently seeking opportunities</strong> to leverage my analytical mindset to drive growth and optimize performance.</p>
                 </div>
             </div>
             
+            <!-- ✅ CERTIFICATIONS (UNCHANGED) -->
             <div class="certifications">
                 <h3>Professional Certifications</h3>
                 <div class="cert-grid">
@@ -72,54 +86,66 @@
             </div>
         </section>
 
+        <!-- SKILLS -->
         <section id="skills" class="section">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
+
                 <div class="skill-category">
-                    <h3>Data Science & ML</h3>
+                    <h3>Languages</h3>
                     <ul class="skill-list">
-                        <li>Statistical Analysis</li>
-                        <li>Hypothesis Testing</li>
-                        <li>A/B Testing</li>
-                        <li>Predictive Modeling</li>
-                        <li>Machine Learning</li>
-                        <li>Feature Engineering</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
                         <li>SQL</li>
-                        <li>PowerBI</li>
-                        <li>MLOps</li>
-                        <li>ETL Processes</li>
-                        <li>Data Preprocessing</li>
+                        <li>Python (Pandas, NumPy, Matplotlib)</li>
                     </ul>
                 </div>
+
                 <div class="skill-category">
-                    <h3>Soft Skills</h3>
+                    <h3>Visualization</h3>
                     <ul class="skill-list">
-                        <li>Problem Solving</li>
-                        <li>Data Storytelling</li>
-                        <li>Project Management</li>
-                        <li>Team Collaboration</li>
-                        <li>Technical Writing</li>
-                        <li>Continuous Learning</li>
+                        <li>Power BI</li>
+                        <li>Dashboard Design</li>
                     </ul>
                 </div>
+
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul class="skill-list">
+                        <li>Advanced Excel (DAX, Power Query)</li>
+                        <li>Data Cleaning & Transformation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Statistics</h3>
+                    <ul class="skill-list">
+                        <li>Descriptive Analysis</li>
+                        <li>Inferential Statistics</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
+        <!-- PROJECTS -->
         <section id="projects" class="section">
             <h2>Featured Projects</h2>
-            <div class="projects-grid" id="projectsContainer">
-                <!-- Projects will be dynamically loaded from JavaScript -->
-            </div>
+            <p>Here are some of my learning and personal projects:</p>
+            <p>
+                <a href="https://github.com/arijit-chandra" target="_blank">
+                    👉 View My GitHub Projects
+                </a>
+            </p>
+            <div class="projects-grid" id="projectsContainer"></div>
         </section>
 
+        <!-- CONTACT -->
         <section id="contact" class="section">
             <h2>Get in Touch</h2>
+
+            <p style="text-align:center; max-width:600px; margin:auto;">
+                📩 I’m always open to discussing data trends, collaboration on projects, or new opportunities in analytics.
+            </p>
+
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -128,13 +154,14 @@
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/arijitchandra/" target="_blank">LinkedIn Profile</a>
+                        <a href="https://www.linkedin.com/in/arijitchandra/" target="_blank">LinkedIn</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-github"></i>
-                        <a href="https://github.com/arijit-chandra" target="_blank">GitHub Profile</a>
+                        <a href="https://github.com/arijit-chandra" target="_blank">GitHub</a>
                     </div>
                 </div>
+
                 <form id="contactForm" class="contact-form" onsubmit="return sendEmail(event)">
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
@@ -143,11 +170,12 @@
                 </form>
             </div>
         </section>
+
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Arijit Chandra. All rights reserved.</p>
+            <p>&copy; 2026 Arijit Chandra. All rights reserved.</p>
         </div>
     </footer>
 
@@ -156,5 +184,6 @@
             emailjs.init("YOUR_PUBLIC_KEY");
         })();
     </script>
+
 </body>
 </html>
